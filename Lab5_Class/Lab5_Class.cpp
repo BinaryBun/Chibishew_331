@@ -1,5 +1,6 @@
 ﻿#include <iostream>
-
+#include "Matrix.h"
+/*
 class Lab4
 {   
     public:
@@ -115,14 +116,16 @@ class Lab4
 int main()
 {
     Lab4 task1;
-    task1.cols1 = 3;
-    task1.rows1 = 3;
+    task1.cols1 = 5;
+    task1.rows1 = 5;
     task1.cols2 = 1;
     task1.rows2 = 3;
 
-    task1.mat_1 = new int[task1.rows1 * task1.cols1] {-2, 12, 1, 
-                                                      1, 3, -5, 
-                                                      2, 4, 5};
+    task1.mat_1 = new int[task1.rows1 * task1.cols1] {0, 0, 5, 0, 0, 
+                                                      2, 1, 7, 0, 4,
+                                                      0, 3, 5, 0, 0,
+                                                      0, 0, 0, 8, 0,
+                                                      2, 7, 0, 0, 0};
     task1.mat_2 = new int[task1.rows2 * task1.cols2] {1, 
                                                       2, 
                                                       3};
@@ -130,8 +133,24 @@ int main()
     //task1.sum();
     //task1.mult();
     //task1.trace();
-    //task1.det();
+    task1.det();
     //task1.muit_by_num(5);
     //task1.input();
     //std::cout << task1.get_elem(1, 2);
+}*/
+
+int main() {
+    Matrix matr_1;
+    matr_1.input(5, 5);
+    //matr_1.det(matr_1.get_rows(), matr_1.ret_matr());
+    std::cout << matr_1.det(matr_1.get_rows(), matr_1.ret_matr());
+    ///Matrix matr_2;
+    ///matr_2.input(3, 2);
+    ///matr_1.mult(matr_2.ret_matr(), matr_2.get_rows(), matr_2.get_columns());
+    ///matr_1.print();
+    //matr_1.print();
+    //matr_1.mult_by_num(2);
+    //matr_1.print();
+    //std::cout << "Trace: " << matr_1.trace() << '\n';
+    //std::cout << matr_1.ret_matr()[2];
 }
