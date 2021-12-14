@@ -120,13 +120,15 @@ void task_3() {
 			std::cout << i;
 		}
 	}
-	std::cout << '\n';
+	std::cout << '\n';  // <- из за него
 }
 
 void task_4() {
-	std::string line;
+	std::string line, pass;
 	std::cout << "Line: ";
+	getline(std::cin, pass);  // pass line
 	getline(std::cin, line);
+	//std::cout << "--" << line << '\n';
 	bool is_out = false;
 
 	std::cout << "\nAnswer: ";
