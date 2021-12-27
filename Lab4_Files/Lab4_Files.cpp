@@ -33,8 +33,15 @@ void task_6(std::string line, int point_location, int slash_location) {
     system(command.c_str());
 }
 
+void test() {
+    const std::string command = "cd .. && dir";
+    system(command.c_str());
+    system("dir");
+}
+
 int main()
 {
+    test();
     std::string line;
     std::string pass;
     int num;
