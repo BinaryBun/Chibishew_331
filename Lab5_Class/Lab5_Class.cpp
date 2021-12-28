@@ -4,12 +4,12 @@
 
 int main() {
     // сложение матриц
-    /* Matrix matr_1; // создание объекта класса
+    Matrix matr_1; // создание объекта класса
     matr_1.input(2, 3);
     Matrix matr_2;
     matr_2.input(2, 3);
     matr_1.sum(matr_2.ret_matr(), matr_2.get_rows(), matr_2.get_columns());
-    matr_1.print(); */
+    matr_1.print();
 
     // умножение матриц
     /*Matrix matr_1;
