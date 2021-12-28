@@ -5,6 +5,7 @@
 void task_1() {
 	std::cout << "Line: ";
 	std::string line_1, line_2 = "";
+	getline(std::cin, line_1); // pass
 	getline(std::cin, line_1);
 
 	int len = line_1.length();
@@ -36,6 +37,7 @@ void task_2() {
 
 	std::string line;			// line
 	std::cout << "Line: ";		// line
+	getline(std::cin, line);	// pass
 	getline(std::cin, line);	// line
 
 	std::string word;			// word
@@ -108,6 +110,7 @@ void task_3() {
 	int shift;
 	std::string line;
 	std::cout << "Line: ";
+	getline(std::cin, line);  // pass
 	getline(std::cin, line);
 	std::cout << "Shift: ";
 	std::cin >> shift;
@@ -143,17 +146,31 @@ void task_4() {
 				std::cout << i;
 		}
 	}
-	std::cout << "\b\b";
+	std::cout << "\b\b\n";
+
 }
 
 int main()
 {
-	std::cout << "===================================================== TASK 1 =====================================================\n";
-	task_1();
-	std::cout << "===================================================== TASK 2 =====================================================\n";
-	task_2();
-	std::cout << "===================================================== TASK 3 =====================================================\n";
-	task_3();
-	std::cout << "===================================================== TASK 4 =====================================================\n";
-	task_4();
+	int num;
+	std::cout << "Enter menu num (press 5 to exit): ";
+	std::cin >> num;
+	while (num != 5) {
+		if (num == 1) {
+			std::cout << "===================================================== TASK 1 =====================================================\n";
+			task_1();}
+		else if (num == 2) {
+			std::cout << "===================================================== TASK 2 =====================================================\n";
+			task_2();}
+		else if (num == 3) {
+			std::cout << "===================================================== TASK 3 =====================================================\n";
+			task_3();}
+		else if (num == 4) {
+			std::cout << "===================================================== TASK 4 =====================================================\n";
+			task_4();}
+
+		std::cout << "Enter menu num (press 5 to exit): ";
+		std::cin >> num;
+	}
+	
 }
