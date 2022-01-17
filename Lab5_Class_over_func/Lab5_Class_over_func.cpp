@@ -1,53 +1,71 @@
-﻿#include <iostream>
-#include "Matrix.h"
+﻿#include "Matrix.h"
+#include <iostream>
 
+int main()
+{
+	bool num;
+	// step one
+	num = true;
+	if (num)
+		Matrix matr_0(2, 3);
+	else {
+		int data[6] = { 1, 2, 3, 4, 5, 6 };
+		Matrix matr_0(2, 3, data);
+	}
 
-int main() {
-    // сложение матриц
-    /*Matrix matr_1; // создание объекта класса
-    matr_1.input(2, 3);
-    Matrix matr_2;
-    matr_2.input(2, 3);
-    matr_1.sum(matr_2.ret_matr(), matr_2.get_rows(), matr_2.get_columns());
-    matr_1.print();*/
+	//step two
+	num = false;
+	if (num) {
+		int data[6] = { 1, 2, 3, 4, 5, 6 };
+		Matrix matr_0(2, 3, data);
 
-    // умножение матриц
-    Matrix matr_1;
-    matr_1.input(2, 3);
-    Matrix matr_2;
-    matr_2.input(3, 2);
-    matr_1.mult(matr_2.ret_matr(), matr_2.get_rows(), matr_2.get_columns());
-    matr_1.print();
-    
+		int data_1[6] = { 6, 5, 4, 3, 2, 1 };
+		matr_0.sum(2, 3, data_1);
+	}
+	else {
+		int* data = new int[6] { 1, 2, 3, 4, 5, 6 };
+		Matrix matr_0(2, 3, data);
 
-    // след матрицы
-    /* Matrix matr_1;
-    matr_1.input(3, 3);
-    std::cout << matr_1.trace() << '\n'; */
+		int* data_1 = new int[6] { 2, 2, 3, 4, 5, 6 };
+		Matrix matr_1(2, 3, data_1);
 
-    // определитель матрицы
-    /* Matrix matr_1;
-    matr_1.input(4, 4);
-    std::cout << matr_1.det(matr_1.get_rows(), matr_1.ret_matr()) << '\n'; */
+		matr_0.sum(matr_1);
+	}
+	
+	// step whree
+	num = false;
+	if (num) {
+		int data[6] = { 1, 2, 3, 4, 5, 6 };
+		Matrix matr_0(2, 3, data);
 
-    // умножение матрицы на число
-    /* Matrix matr_1;
-    matr_1.input(2, 2);
-    matr_1.mult_by_num(4);
-    matr_1.print(); */
+		int data_1[6] = { 6, 5, 4, 3, 2, 1 };
+		matr_0.mult(3, 2, data_1);
+	}
+	else {
+		int* data = new int[6]{ 1, 2, 3, 4, 5, 6 };
+		Matrix matr_0(2, 3, data);
 
-    //количество столбцов
-    /* Matrix matr_1;
-    matr_1.input(2, 2);
-    std::cout << matr_1.get_columns() << '\n';*/
+		int* data_1 = new int[6]{ 2, 2, 3, 4, 5, 6 };
+		Matrix matr_1(3, 2, data_1);
 
-    //количество строк
-    /*Matrix matr_1;
-    matr_1.input(2, 2);
-    std::cout << matr_1.get_rows() << '\n'; */
+		matr_0.mult(matr_1);
+	}
 
-    //вернуть (i,j) элемент
-    /*Matrix matr_1;
-    matr_1.input(3, 3);
-    std::cout << matr_1.get_elem(1,2) << '\n'; */
+	// step fore
+	num = true;
+	if (num) {
+		Matrix matr_0(2, 3);
+		matr_0.input(2, 3, true);  // auto
+
+		std::cout << '\n';
+		matr_0.print();
+	}
+	else {
+		int* data = new int[6]{ 1, 2, 3, 4, 5, 6 };
+		Matrix matr_0(2, 3);
+
+		matr_0.input(2, 3, data);
+		std::cout << '\n';
+		matr_0.print();
+	}
 }

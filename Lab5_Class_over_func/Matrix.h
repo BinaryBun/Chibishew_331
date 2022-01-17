@@ -1,30 +1,28 @@
 #pragma once
 class Matrix
 {
-	//модификаторы доступа
 private:
-	int col, row;
-	double* matrix;
+	int col;
+	int row;
+	int* element;
 
-protected:
-	//
 public:
-	Matrix();  // конструктор по умолчанию
-	~Matrix();  // деструктор
+	Matrix();
+	Matrix(int i, int j);
+	Matrix(int i, int j, const int* arr);
+	Matrix(const Matrix& orig);
+	~Matrix();
 
-	void input(int tmp_row, int tmp_col);  // воод матрицы с клавиатуры
-	void print();  // вывод матрицы
-	int get_columns();  // получение колонок
-	int get_rows();  // получение столбцов
-	int get_elem(int i, int j);  // получение элемента
-	void mult_by_num(double num);  // умножение матрицы на число
-	int trace();  // след матрицы
-	void sum(double matrix_2[], int row_2, int col_2);  // сумма матриц
-	void mult(double matrix_2[], int row_2, int col_2);  // перемнодение матриц
-	int det(int rang, int matr[]);  // оперделитель матрицы
+	void sum(int row, int col, const int* arr);
+	void sum(Matrix second);
 
-	int det_3(int matr[]);
-	double* ret_matr();
+	void mult(int row, int col, const int* arr);
+	void mult(Matrix second);
+
+	void input(int i, int j, bool flag);
+	void input(int i, int j, const int* arr);
+
+	void print();
 };
 
 
